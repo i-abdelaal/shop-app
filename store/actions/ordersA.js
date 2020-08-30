@@ -58,6 +58,7 @@ export const addOrder = (items, totalQuantity, totalPrice) => {
     }
 
     const resData = await response.json();
+    console.log(resData.name);
     dispatch({
       type: ADD_ORDER,
       orderData: { id: resData.name, items, totalQuantity, totalPrice, date },

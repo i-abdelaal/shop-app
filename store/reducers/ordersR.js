@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_ORDER: {
-      orders: action.orders;
+      return { orders: action.orders };
     }
     case ADD_ORDER:
       const newOrder = new Order(
