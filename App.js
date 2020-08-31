@@ -9,9 +9,10 @@ import ReduxThunk from "redux-thunk";
 import productsR from "./store/reducers/productsR";
 import cartR from "./store/reducers/cartR";
 import ordersR from "./store/reducers/ordersR";
+import authR from "./store/reducers/authR";
 import ShopNavigator from "./navigation/ShopNavigator";
 
-const rootReducer = combineReducers({ productsR, cartR, ordersR });
+const rootReducer = combineReducers({ productsR, cartR, ordersR, authR });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 enableScreens();
