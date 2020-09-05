@@ -99,6 +99,10 @@ const CartScreen = (props) => {
   );
 };
 
+export const cartScreenOptions = {
+  headerTitle: "Your Cart",
+};
+
 const styles = StyleSheet.create({
   screen: { margin: 20 },
   summary: {
@@ -119,9 +123,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-CartScreen.navigationOptions = {
-  headerTitle: "Your Cart",
-};
 
 export default CartScreen;

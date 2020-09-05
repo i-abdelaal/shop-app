@@ -25,11 +25,8 @@ const ProductsOverviewScreen = (props) => {
   const products = useSelector((state) => state.productsR.availableProducts);
   const dispatch = useDispatch();
   const selectItemHandler = (item) => {
-    props.navigation.navigate({
-      routeName: "ProductDetail",
-      params: {
-        item,
-      },
+    props.navigation.navigate("ProductDetail", {
+      item,
     });
   };
 
@@ -50,11 +47,8 @@ const ProductsOverviewScreen = (props) => {
   }, [loadProducts]);
 
   useEffect(() => {
-    const willFocusSub = props.navigation.addListener(
-      "willFocus",
-      loadProducts
-    );
-    willFocusSub.remove();
+    const unsubscribe = props.navigation.addListener("focus", loadProducts);
+    unsubscribe();
   }, [loadProducts]);
 
   if (isLoading) {
@@ -108,7 +102,7 @@ const ProductsOverviewScreen = (props) => {
   );
 };
 
-ProductsOverviewScreen.navigationOptions = (navData) => {
+export const productsOverviewScreenOptions = (navData) => {
   return {
     headerTitle: "All Products",
     headerLeft: () => (

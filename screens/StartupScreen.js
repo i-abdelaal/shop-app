@@ -8,7 +8,7 @@ import {
 import { useDispatch } from "react-redux";
 
 import Colors from "../constants/Colors";
-import { authenticate } from "../store/actions/authA";
+import { authenticate, setDidTryAl } from "../store/actions/authA";
 
 const StartupScreen = (props) => {
   dispatch = useDispatch();
@@ -16,7 +16,8 @@ const StartupScreen = (props) => {
     const tryLogin = async () => {
       const userData = await AsyncStorage.getItem("userData");
       if (!userData) {
-        props.navigation.navigate("Auth");
+        // props.navigation.navigate("Auth");
+        dispatch(setDidTryAl());
         return;
       }
       const transformedData = JSON.parse(userData);
@@ -24,13 +25,14 @@ const StartupScreen = (props) => {
       const expiryDate = new Date(expirationDate);
 
       if (expiryDate <= new Date() || !token || !userId) {
-        props.navigation.navigate("Auth");
+        // props.navigation.navigate("Auth");
+        dispatch(setDidTryAl());
         return;
       }
 
       const expirationTime = expiryDate.getTime() - new Date().getTime();
 
-      props.navigation.navigate("Shop");
+      // props.navigation.navigate("Shop");
       dispatch(authenticate(token, userId, expirationTime));
     };
     tryLogin();

@@ -12,7 +12,7 @@ const UserProductsScreen = (props) => {
   const userProducts = useSelector((state) => state.productsR.userProducts);
   const dispatch = useDispatch();
   const editProductHandler = (item) => {
-    props.navigation.navigate({ routeName: "EditProduct", params: { item } });
+    props.navigation.navigate("EditProduct", { item });
   };
 
   const deleteHandler = (id) => {
@@ -60,7 +60,7 @@ const UserProductsScreen = (props) => {
   );
 };
 
-UserProductsScreen.navigationOptions = (navData) => {
+export const userProductsScreenOptions = (navData) => {
   return {
     headerTitle: "Your Products",
     headerLeft: () => (

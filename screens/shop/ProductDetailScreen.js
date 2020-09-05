@@ -13,7 +13,7 @@ import Colors from "../../constants/Colors";
 import * as cartActions from "../../store/actions/cartA";
 
 const ProductDetailScreen = (props) => {
-  const product = props.navigation.getParam("item");
+  const product = props.route.params.item;
 
   const dispatch = useDispatch();
   return (
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
   },
 });
 
-ProductDetailScreen.navigationOptions = (navData) => {
-  return { headerTitle: navData.navigation.getParam("item").title };
+export const productDetaiScreenOptions = (navData) => {
+  return { headerTitle: navData.route.params.item.title };
 };
 
 export default ProductDetailScreen;
