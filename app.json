@@ -1,12 +1,13 @@
 {
   "expo": {
     "name": "shop_app",
+    "description": "Use these credentials in order to be able to discover this e-commerce app { user: test@test.com, pssw: 123456 }, as I've disabled submit and delete funtions for security and privacy reasons.",
     "slug": "shop_app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/shop_icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/shop_icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
