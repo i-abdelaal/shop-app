@@ -30,6 +30,7 @@ const CartScreen = (props) => {
       productPrice: cart.items[i].productPrice,
       quantity: cart.items[i].quantity,
       sum: cart.items[i].sum,
+      productPushToken: cart.items[i].pushToken,
     });
   }
   cartItems.sort((a, b) => (a.productId > b.productId ? 1 : -1));

@@ -35,7 +35,7 @@ const CartItem = (props) => {
         </TouchableCmp>
       )}
       <View style={styles.itemData}>
-        <Text style={styles.amount}>${props.sum.toFixed(2)}</Text>
+        <Text style={styles.amount}>${props.sum}</Text>
       </View>
       {props.deleteIcon && (
         <TouchableCmp onPress={props.onRemove} style={styles.Button}>
