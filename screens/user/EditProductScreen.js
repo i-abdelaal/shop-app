@@ -117,7 +117,14 @@ const EditProductScreen = (props) => {
             iconName={
               Platform.OS === "android" ? "md-checkmark" : "ios-checkmark"
             }
-            onPress={submitHandler}
+            onPress={
+              () => {
+                Alert.alert("Not Allowed!", "This action has been disabled", [
+                  { text: "Okay", color: "destructive" },
+                ]);
+              }
+              // submitHandler
+            }
           />
         </HeaderButtons>
       ),

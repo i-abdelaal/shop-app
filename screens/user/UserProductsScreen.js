@@ -53,7 +53,14 @@ const UserProductsScreen = (props) => {
           onEdit={() => {
             editProductHandler(itemData.item);
           }}
-          onDelete={deleteHandler.bind(this, itemData.item.id)}
+          onDelete={
+            () => {
+              Alert.alert("Not Allowed!", "This action has been disabled", [
+                { text: "Okay", color: "destructive" },
+              ]);
+            }
+            // deleteHandler.bind(this, itemData.item.id)
+          }
         />
       )}
     />
